@@ -74,7 +74,7 @@ const Principal = ({ scrollToProyectosRef }) => {
                 initial="hidden"
                 animate="visible"
                 onClick={scrollToProyectos}
-                className="px-4 py-2 mb-6 bg-green-500 text-white rounded tracking-tight ml-3"> Portfolio de Proyectos
+                className="px-4 py-2 mb-6 bg-green-500 text-white rounded tracking-tight ml-3"> Proyectos
               </motion.button>
             </motion.div>
           </div>

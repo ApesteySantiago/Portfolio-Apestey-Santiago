@@ -1,9 +1,11 @@
+import React from "react"
 import { PROJECTS } from "../constants"
 import { motion } from "framer-motion"
 
-const Proyectos = () => {
+
+const Proyectos = React.forwardRef((props, ref) => {
   return (
-    <div className="borde-b border-neutral-900 pb-4">
+    <div ref={ref} className="borde-b border-neutral-900 pb-4">
       <motion.h2 
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity:  0, y: -100 }}
@@ -42,7 +44,7 @@ const Proyectos = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+});
 
 export default Proyectos

@@ -21,7 +21,13 @@ const entradaImg = () => ({
   }
 })
 
-const Principal = () => {
+const Principal = ({ scrollToProyectosRef }) => {
+  const scrollToProyectos = () => {
+    if (scrollToProyectosRef.current) {
+      scrollToProyectosRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="border-b border-neutral-900 pb-4 lg:mb-35">
       <div className="flex flex-wrap">
@@ -50,15 +56,28 @@ const Principal = () => {
               className="my-2 max-w-xl py-6 font-light tracking-tight text-custom-color text-justify">
               {CONTENIDO_PRINCIPAL}
             </motion.p>
-            <motion.a
-              variants={entradaTxt(1.2)}
+            <motion.div
+              variants={entradaTxt(0.5)}
               initial="hidden"
-              animate="visible" 
-              href={CV}
-              download
-              className="px-4 py-2 mb-6 bg-blue-500 text-white rounded tracking-tight">Descargar CV
-            </motion.a>
-          </div>   
+              animate="visible"
+              className="px-4 py-2 mb-5">
+              <motion.a
+                variants={entradaTxt(1.2)}
+                initial="hidden"
+                animate="visible"
+                href={CV}
+                download
+                className="px-4 py-2 mb-6 bg-blue-500 text-white rounded tracking-tight">Descargar CV
+              </motion.a>
+              <motion.button
+                variants={entradaTxt(1.2)}
+                initial="hidden"
+                animate="visible"
+                onClick={scrollToProyectos}
+                className="px-4 py-2 mb-6 bg-green-500 text-white rounded tracking-tight ml-3"> Portfolio de Proyectos
+              </motion.button>
+            </motion.div>
+          </div>
         </div>
         <div className="w-full lg:w-1/2 lg:p-8">
           <div className="flex justify-center">
@@ -69,7 +88,6 @@ const Principal = () => {
               src={profilePic} alt="Kevin Rush" />
           </div>
         </div>
-
       </div>
     </div>
   );

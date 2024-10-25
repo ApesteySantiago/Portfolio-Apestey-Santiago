@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import Navbar from './components/Navbar'
 import Principal from './components/Principal'
 import Acerca from './components/Acerca'
@@ -8,6 +8,8 @@ import Proyectos from './components/Proyectos'
 import Contacto from './components/Contacto'
 
 const App = () => {
+  const proyectosRef = useRef(null);
+
   return (
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
       <div className='fixed top-0 -z-10 h-full w-full'>
@@ -16,11 +18,11 @@ const App = () => {
       
       <div className="containter mx-auto px-8 justify-center">
         <Navbar />
-        <Principal />
+        <Principal scrollToProyectosRef={proyectosRef} />
         <Acerca />
         <Tecnologias />
         <Experiencia />
-        <Proyectos />
+        <Proyectos ref={proyectosRef} />
         <Contacto />
       </div>
 

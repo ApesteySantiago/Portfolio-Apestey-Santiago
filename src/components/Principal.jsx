@@ -22,15 +22,42 @@ const entradaImg = () => ({
 })
 
 const Principal = ({ scrollToProyectosRef }) => {
+  
   const scrollToProyectos = () => {
     if (scrollToProyectosRef.current) {
-      scrollToProyectosRef.current.scrollIntoView({ behavior: "smooth" });
+      const targetPosition = scrollToProyectosRef.current.offsetTop;
+      const step = 10; // Ajusta este valor para que el desplazamiento sea más lento o más rápido
+
+      const scrollInterval = setInterval(() => {
+        const currentPosition = window.scrollY;
+        const distance = targetPosition - currentPosition;
+
+        if (Math.abs(distance) <= step) {
+          clearInterval(scrollInterval);
+          window.scrollTo(0, targetPosition); // Asegura que termina exactamente en el destino
+        } else {
+          window.scrollBy(0, distance > 0 ? step : -step);
+        }
+      }, 5); // Ajusta el intervalo para hacer el scroll más rápido o lento (10 ms es bastante suave)
     }
   };
 
   return (
     <div className="border-b border-neutral-900 pb-4 lg:mb-35">
       <div className="flex flex-wrap">
+
+        <div className="w-full lg:w-1/2 lg:p-8">
+          <div className="flex justify-center lg:justify-start">
+            <motion.img
+              variants={entradaImg()}
+              initial="hidden"
+              animate="visible"
+              src={profilePic} 
+              alt="Kevin Rush"
+              className="rounded-full" />
+          </div>
+        </div>
+
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
             <motion.h1
@@ -79,15 +106,7 @@ const Principal = ({ scrollToProyectosRef }) => {
             </motion.div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 lg:p-8">
-          <div className="flex justify-center">
-            <motion.img
-              variants={entradaImg()}
-              initial="hidden"
-              animate="visible"
-              src={profilePic} alt="Kevin Rush" />
-          </div>
-        </div>
+        
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { CONTENIDO_PRINCIPAL } from "../constants";
-import profilePic from "../assets/kevinRushProfile.png";
+import profilePic from "../assets/FotoPerfil111.png";
 import CV from "../assets/CV_ApesteySantiago.pdf";
 import { delay, motion } from "framer-motion";
 
@@ -8,7 +8,16 @@ const entradaTxt = (delay) => ({
   visible: {
     x: 0,
     opacity: 1,
-    transition: { duration: 1, delay }
+    transition: { duration: 2, delay }
+  }
+})
+
+const entradaTxtinverso = (delay) => ({
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 2, delay }
   }
 })
 
@@ -53,8 +62,8 @@ const Principal = ({ scrollToProyectosRef }) => {
               initial="hidden"
               animate="visible"
               src={profilePic} 
-              alt="Kevin Rush"
-              className="rounded-full" />
+              alt="Apestey Santiago"
+              className="rounded-2xl mb-2" />
           </div>
         </div>
 
@@ -97,11 +106,11 @@ const Principal = ({ scrollToProyectosRef }) => {
                 className="px-4 py-2 mb-6 bg-blue-500 text-white rounded tracking-tight">Descargar CV
               </motion.a>
               <motion.button
-                variants={entradaTxt(1.2)}
+                variants={entradaTxtinverso(1.1)}
                 initial="hidden"
                 animate="visible"
                 onClick={scrollToProyectos}
-                className="px-4 py-2 mb-6 bg-green-500 text-white rounded tracking-tight ml-3"> Proyectos
+                className="px-4 py-1.5 mb-6 bg-green-500 text-white rounded tracking-tight ml-3"> Proyectos
               </motion.button>
             </motion.div>
           </div>

@@ -1,4 +1,4 @@
-import project1 from "../assets/Proyectos/Full-stack.png";
+import project1 from "../assets/Proyectos/Full-Stack.png";
 import project2 from "../assets/Proyectos/Front-End-Final.png";
 import project3 from "../assets/Proyectos/Bootstrap.png";
 import project4 from "../assets/Proyectos/Programa_ABMC.png";

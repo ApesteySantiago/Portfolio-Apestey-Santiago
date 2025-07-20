@@ -1,8 +1,8 @@
-import project1 from "../assets/Foto_de_Proyectos/Full-stack.png";
-import project2 from "../assets/Foto_de_Proyectos/Front-End-Final.png";
-import project3 from "../assets/Foto_de_Proyectos/Bootstrap.png";
-import project4 from "../assets/Foto_de_Proyectos/Programa_ABMC.png";
-import project5 from "../assets/Foto_de_Proyectos/TeamFakas.png";
+import project1 from "../assets/Proyectos/Full-stack.png";
+import project2 from "../assets/Proyectos/Front-End-Final.png";
+import project3 from "../assets/Proyectos/Bootstrap.png";
+import project4 from "../assets/Proyectos/Programa_ABMC.png";
+import project5 from "../assets/Proyectos/TeamFakas.png";
 
 export const CONTENIDO_PRINCIPAL = `Soy un desarrollador full stack apasionado con una gran capacidad para crear aplicaciones web eficientes y bien estructuradas. Con 4 años de experiencia, he perfeccionado mis habilidades en tecnologías de front-end como React, JavaScript, TypeScript, HTML5, CSS3, Bootstrap y AJAX, así como en tecnologías de back-end como Node.js, PHP, y bases de datos como MySQL, SQLite y MongoDB. Mi objetivo es aprovechar mi experiencia y nutrirla con nuevos objetivos para desarrollar soluciones innovadoras que se ajusten a las necesidades de los proyectos y ofrezcan experiencias de usuario de alta calidad.`;
 
@@ -56,7 +56,6 @@ export const PROJECTS = [
   {
     title: "Team Fakas",
     image: project5,
-    link: "#",
     description:
       "(En desarrollo) Aplicación SaaS para importantes profesores de gymnasios, con funcionalidades de gestión de clientes, clases y pagos.",
     technologies: ["Next.js","Nest.js", "Docker", "Typescript", "Node.js", "Rabbit  MQ"],
